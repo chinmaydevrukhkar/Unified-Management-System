@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../Models/product_model.dart'; // Assuming the Product model is in this file
+import '../Models/product_category_model.dart';
+import '../Models/product_model.dart';
 
 class ProductService {
   final String baseUrl = 'http://localhost:3000/categories'; // Your API URL
@@ -91,5 +92,30 @@ class ProductService {
     if (response.statusCode != 200) {
       throw Exception('Failed to delete product');
     }
+  }
+
+  Future<List<Product>> getAllProducts() async {
+    List<Product> allProducts = [];
+    final response = await http.get(
+      Uri.parse('http://localhost:3000/inventory'),
+      headers: {
+        "Accept": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    );
+
+    if (response.statusCode == 200) {
+      // Decode the response
+      Map<String, dynamic> responseBody = jsonDecode(response.body);
+      print(responseBody['products']);
+      // Access the 'products' key which contains the list
+      List<dynamic> productList = responseBody['products'];
+      allProducts =
+          productList.map((dynamic item) => Product.fromJson(item)).toList();
+    } else {
+      throw Exception('Failed to load products');
+    }
+
+    return allProducts;
   }
 }

@@ -23,7 +23,6 @@ class CategoryService {
       // Assuming the list of categories is under the 'data' key or another key
       if (responseBody.containsKey('categories')) {
         List<dynamic> categoryList = responseBody['categories'];
-        print(categoryList.toString());
         allCategories = categoryList
             .map((dynamic item) => ProductCategory.fromJson(item))
             .toList();

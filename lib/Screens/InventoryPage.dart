@@ -22,7 +22,8 @@ class InventoryPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.calendar_today_outlined, color: Colors.black),
+            icon:
+                const Icon(Icons.calendar_today_outlined, color: Colors.black),
             onPressed: () {
               // Handle date picker or any other action
             },
@@ -115,7 +116,9 @@ class InventoryPage extends StatelessWidget {
                 percentageChange,
                 style: TextStyle(
                   fontSize: 20,
-                  color: percentageChange.contains('-') ? Colors.red : Colors.green,
+                  color: percentageChange.contains('-')
+                      ? Colors.red
+                      : Colors.green,
                 ),
               ),
             ],
@@ -214,7 +217,8 @@ class InventoryPage extends StatelessWidget {
                         getTitlesWidget: (double value, TitleMeta meta) {
                           return Text(
                             value.toInt().toString(),
-                            style: const TextStyle(color: Colors.black, fontSize: 10),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 10),
                           );
                         },
                       ),
@@ -225,7 +229,8 @@ class InventoryPage extends StatelessWidget {
                         getTitlesWidget: (double value, TitleMeta meta) {
                           return Text(
                             value.toInt().toString(),
-                            style: const TextStyle(color: Colors.black, fontSize: 10),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 10),
                           );
                         },
                       ),
@@ -267,7 +272,8 @@ class InventoryPage extends StatelessWidget {
                         getTitlesWidget: (double value, TitleMeta meta) {
                           return Text(
                             value.toInt().toString(),
-                            style: const TextStyle(color: Colors.black, fontSize: 10),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 10),
                           );
                         },
                       ),
@@ -278,7 +284,8 @@ class InventoryPage extends StatelessWidget {
                         getTitlesWidget: (double value, TitleMeta meta) {
                           return Text(
                             value.toInt().toString(),
-                            style: const TextStyle(color: Colors.black, fontSize: 10),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 10),
                           );
                         },
                       ),
